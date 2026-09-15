@@ -7,7 +7,7 @@ Banks carry thousands of overdue loans and can't chase all of them equally hard.
 segments, and turns every prediction into a **recovery action with a rupee value attached**, served
 through a REST API and a collections dashboard.
 
-![CI](https://github.com/Pps-369/smart-loan-recovery/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Pps-369/SMART-LOAN-RECOVERY-SYSTEM/actions/workflows/ci.yml/badge.svg)
 
 ---
 
