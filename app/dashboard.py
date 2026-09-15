@@ -14,10 +14,10 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))  # works without `pip install -e .`
 
-from loan_recovery.config import load_config, resolve_path  # noqa: E402
-from loan_recovery.features import CATEGORY_VALUES, REQUIRED_INPUT_COLUMNS  # noqa: E402
-from loan_recovery.predict import LoanRecoveryPredictor  # noqa: E402
-from loan_recovery.strategy import ACTIONS, BAND_ORDER  # noqa: E402
+from loan_recovery.config import load_config, resolve_path
+from loan_recovery.features import CATEGORY_VALUES, REQUIRED_INPUT_COLUMNS
+from loan_recovery.predict import LoanRecoveryPredictor
+from loan_recovery.strategy import ACTIONS, BAND_ORDER
 
 st.set_page_config(page_title="Smart Loan Recovery", page_icon="🏦", layout="wide")
 CFG = load_config()

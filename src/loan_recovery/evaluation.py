@@ -6,11 +6,11 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")  # no display needed (servers, Docker, CI)
-import matplotlib.pyplot as plt  # noqa: E402
-import numpy as np  # noqa: E402
-import pandas as pd  # noqa: E402
-from sklearn.calibration import calibration_curve  # noqa: E402
-from sklearn.metrics import (  # noqa: E402
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.calibration import calibration_curve
+from sklearn.metrics import (
     average_precision_score,
     brier_score_loss,
     confusion_matrix,

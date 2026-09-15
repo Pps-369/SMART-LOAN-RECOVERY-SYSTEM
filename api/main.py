@@ -16,8 +16,8 @@ from pydantic import BaseModel, ConfigDict, Field
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))  # works without `pip install -e .`
 
-from loan_recovery import __version__  # noqa: E402
-from loan_recovery.predict import LoanRecoveryPredictor  # noqa: E402
+from loan_recovery import __version__
+from loan_recovery.predict import LoanRecoveryPredictor
 
 EXAMPLE = {
     "Loan_ID": "LN0001234",

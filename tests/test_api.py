@@ -1,9 +1,9 @@
 import pytest
 
 fastapi = pytest.importorskip("fastapi")
-from fastapi.testclient import TestClient  # noqa: E402
+from fastapi.testclient import TestClient
 
-from loan_recovery.features import REQUIRED_INPUT_COLUMNS  # noqa: E402
+from loan_recovery.features import REQUIRED_INPUT_COLUMNS
 
 
 @pytest.fixture(scope="module")

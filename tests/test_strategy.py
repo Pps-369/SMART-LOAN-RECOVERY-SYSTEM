@@ -1,6 +1,6 @@
 import numpy as np
-import pytest
 import pandas as pd
+import pytest
 
 from loan_recovery.features import add_engineered_features
 from loan_recovery.strategy import assign_risk_band, escalation_value, optimize_threshold, recommend_actions

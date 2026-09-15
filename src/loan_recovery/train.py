@@ -246,8 +246,10 @@ def _write_summary(r: dict, path: Path) -> None:
     lines = [
         "# Training summary",
         "",
-        f"Trained {r['trained_at']} - model **{r['best_model']}** ({r['calibration']} calibrated), "
-        f"{r['n_segments']} borrower segments.",
+        (
+            f"Trained {r['trained_at']} - model **{r['best_model']}** ({r['calibration']} calibrated), "
+            f"{r['n_segments']} borrower segments."
+        ),
         "",
         "## Model comparison (5-fold CV on train)" if not r["fast_mode"] else "## Model comparison (3-fold CV, fast mode)",
         "",

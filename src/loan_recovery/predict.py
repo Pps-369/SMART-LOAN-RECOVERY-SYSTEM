@@ -31,7 +31,7 @@ class LoanRecoveryPredictor:
         self.metadata = bundle["metadata"]
 
     @classmethod
-    def load(cls, path: str | Path | None = None) -> "LoanRecoveryPredictor":
+    def load(cls, path: str | Path | None = None) -> LoanRecoveryPredictor:
         path = Path(path) if path else default_model_path()
         if not path.exists():
             raise FileNotFoundError(f"No model at {path}. Train one first: python -m loan_recovery.train")
