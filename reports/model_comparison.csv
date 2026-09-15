@@ -1,0 +1,4 @@
+model,roc_auc,roc_auc_std,average_precision,average_precision_std,fit_seconds
+logistic_regression,0.8184,0.0163,0.6565,0.024,0.3859
+hist_gradient_boosting,0.8105,0.0179,0.6425,0.0312,4.9494
+random_forest,0.8054,0.0173,0.6383,0.0328,4.289

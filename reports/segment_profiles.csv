@@ -1,0 +1,6 @@
+Segment_ID,Segment,Loans,Share,Avg_Days_Past_Due,Avg_Missed_Payments,Median_EMI_to_Income,Median_Collateral_Coverage,Avg_Credit_Score,Avg_Previous_Defaults,Total_Outstanding,Loss_Rate
+3,S1 - Low Risk,1102,0.143,106.015,3.467,0.314,2.892,684.064,0.242,585382948.0,0.091
+4,S2 - Guarded,2703,0.352,87.477,2.839,0.207,0.0,690.519,0.098,1033889876.0,0.202
+2,S3 - Moderate Risk,1313,0.171,126.165,4.103,0.712,1.42,678.825,0.197,2962869056.0,0.267
+1,S4 - High Risk,1605,0.209,250.657,7.933,0.244,0.0,687.151,0.189,1135418399.0,0.432
+0,S5 - Severe Risk,957,0.125,116.148,3.744,0.277,0.0,605.845,1.496,551525504.0,0.502

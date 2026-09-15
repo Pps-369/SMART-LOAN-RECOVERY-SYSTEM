@@ -1,0 +1,181 @@
+{
+  "trained_at": "2026-09-15T21:01:59+00:00",
+  "sklearn_version": "1.9.1",
+  "best_model": "logistic_regression",
+  "calibration": "isotonic",
+  "n_segments": 5,
+  "n_train": 7680,
+  "n_val": 1920,
+  "n_test": 2400,
+  "high_risk_threshold": 0.43,
+  "medium_risk_threshold": 0.215,
+  "test_metrics": {
+    "roc_auc": 0.8199,
+    "pr_auc": 0.6611,
+    "brier": 0.1464,
+    "log_loss": 0.4523,
+    "threshold": 0.43,
+    "precision": 0.649,
+    "recall": 0.5244,
+    "f1": 0.5801,
+    "confusion_matrix": {
+      "tn": 1531,
+      "fp": 192,
+      "fn": 322,
+      "tp": 355
+    },
+    "base_loss_rate": 0.2821
+  },
+  "dpd_baseline_roc_auc": 0.6566,
+  "business_value_test": {
+    "model_net_value": 8298647.0,
+    "escalate_all_net_value": -26419699.0,
+    "escalate_none_net_value": 0.0,
+    "dpd_90_rule_net_value": -9607794.0,
+    "perfect_foresight_net_value": 25270301.0,
+    "loans_escalated": 547,
+    "expected_loss_test_portfolio": 514389481.0
+  },
+  "fast_mode": false,
+  "cv_comparison": [
+    {
+      "model": "logistic_regression",
+      "roc_auc": 0.8184,
+      "roc_auc_std": 0.0163,
+      "average_precision": 0.6565,
+      "average_precision_std": 0.024,
+      "fit_seconds": 0.3859
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "roc_auc": 0.8105,
+      "roc_auc_std": 0.0179,
+      "average_precision": 0.6425,
+      "average_precision_std": 0.0312,
+      "fit_seconds": 4.9494
+    },
+    {
+      "model": "random_forest",
+      "roc_auc": 0.8054,
+      "roc_auc_std": 0.0173,
+      "average_precision": 0.6383,
+      "average_precision_std": 0.0328,
+      "fit_seconds": 4.289
+    }
+  ],
+  "segment_k_scores": [
+    {
+      "k": 3,
+      "silhouette": 0.1789,
+      "inertia": 43689.0949
+    },
+    {
+      "k": 4,
+      "silhouette": 0.1792,
+      "inertia": 39230.3202
+    },
+    {
+      "k": 5,
+      "silhouette": 0.1849,
+      "inertia": 35317.2718
+    },
+    {
+      "k": 6,
+      "silhouette": 0.1531,
+      "inertia": 33227.0583
+    }
+  ],
+  "segments": {
+    "3": {
+      "name": "S1 - Low Risk",
+      "rank": 1,
+      "train_loss_rate": 0.0907
+    },
+    "4": {
+      "name": "S2 - Guarded",
+      "rank": 2,
+      "train_loss_rate": 0.2016
+    },
+    "2": {
+      "name": "S3 - Moderate Risk",
+      "rank": 3,
+      "train_loss_rate": 0.2666
+    },
+    "1": {
+      "name": "S4 - High Risk",
+      "rank": 4,
+      "train_loss_rate": 0.4318
+    },
+    "0": {
+      "name": "S5 - Severe Risk",
+      "rank": 5,
+      "train_loss_rate": 0.5016
+    }
+  },
+  "fairness_by_gender": [
+    {
+      "Gender": "Female",
+      "loans": 952,
+      "flagged_rate": 0.2153,
+      "actual_loss_rate": 0.2679
+    },
+    {
+      "Gender": "Male",
+      "loans": 1448,
+      "flagged_rate": 0.2362,
+      "actual_loss_rate": 0.2914
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "Days_Past_Due",
+      "importance_mean": 0.16438,
+      "importance_std": 0.01055
+    },
+    {
+      "feature": "Collateral_Value",
+      "importance_mean": 0.14327,
+      "importance_std": 0.0066
+    },
+    {
+      "feature": "Credit_Score",
+      "importance_mean": 0.07926,
+      "importance_std": 0.00572
+    },
+    {
+      "feature": "Outstanding_Loan_Amount",
+      "importance_mean": 0.07143,
+      "importance_std": 0.00863
+    },
+    {
+      "feature": "Monthly_Income",
+      "importance_mean": 0.04364,
+      "importance_std": 0.00422
+    },
+    {
+      "feature": "Loan_Amount",
+      "importance_mean": 0.03197,
+      "importance_std": 0.00729
+    },
+    {
+      "feature": "Monthly_EMI",
+      "importance_mean": 0.03186,
+      "importance_std": 0.00835
+    },
+    {
+      "feature": "Loan_Tenure",
+      "importance_mean": 0.02736,
+      "importance_std": 0.00315
+    },
+    {
+      "feature": "Months_Since_Origination",
+      "importance_mean": 0.02604,
+      "importance_std": 0.00391
+    },
+    {
+      "feature": "Employment_Type",
+      "importance_mean": 0.02115,
+      "importance_std": 0.00276
+    }
+  ]
+}

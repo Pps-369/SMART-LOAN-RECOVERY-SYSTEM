@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Generated data and models (recreate with `python -m loan_recovery.train`)
+data/raw/*.csv
+data/processed/*.csv
+models/*.joblib
+reports/scored_portfolio.csv
+
+# Keep folder placeholders
+!**/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env

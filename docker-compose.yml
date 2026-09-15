@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    image: smart-loan-recovery:latest
+    ports:
+      - "8000:8000"
+
+  dashboard:
+    build: .
+    image: smart-loan-recovery:latest
+    depends_on:
+      - api
+    command: ["streamlit", "run", "app/dashboard.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+    ports:
+      - "8501:8501"
+    healthcheck:
+      disable: true

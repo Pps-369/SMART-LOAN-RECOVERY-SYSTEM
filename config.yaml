@@ -1,0 +1,38 @@
+# Smart Loan Recovery System - configuration
+# Every tunable number lives here so you can change behaviour without touching code.
+
+project:
+  random_state: 42
+
+data:
+  n_samples: 12000                       # size of the synthetic overdue portfolio
+  raw_path: data/raw/loan_recovery.csv   # generated if missing; replace with a real file using the same columns
+  demo_portfolio_path: data/processed/demo_portfolio.csv   # held-out test loans, used by the dashboard
+  test_size: 0.20                        # final hold-out, touched once
+  val_size: 0.20                         # share of the remaining data used to pick the decision threshold
+
+clustering:
+  k_min: 3                               # business teams can't act on 2 segments or 12 segments
+  k_max: 6
+  silhouette_sample: 3000                # silhouette is O(n^2), so score it on a sample
+
+model:
+  cv_folds: 5
+  selection_metric: average_precision    # PR-AUC: focuses on the minority "loss" class
+  calibration_method: isotonic           # probabilities feed money calculations, so they must be calibrated
+  calibration_cv: 3
+  permutation_repeats: 5
+
+strategy:
+  # Assumptions used to turn probabilities into decisions. Replace with your bank's real numbers.
+  escalation_cost: 30000                 # cost (INR) of intensive recovery for one loan: legal, field visits, agency fees
+  escalation_recovery_uplift: 0.10       # share of outstanding that escalation saves on a loan that would otherwise be lost
+  medium_band_ratio: 0.5                 # Medium band starts at this fraction of the High-risk threshold
+  collateral_haircut: 0.70               # a forced sale realises ~70% of collateral value
+  min_lgd: 0.10                          # loss given default never assumed below 10%
+  high_exposure_amount: 500000           # above this outstanding (INR), under-secured loans go to settlement talks
+  high_emi_to_income: 0.50               # EMI above 50% of income signals an affordability problem
+
+paths:
+  model: models/loan_recovery_model.joblib
+  reports: reports
